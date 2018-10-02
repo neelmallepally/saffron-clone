@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saffron.API", "Saffron.API\Saffron.API.csproj", "{357E9306-4E93-4996-915D-08ACE69A7092}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{357E9306-4E93-4996-915D-08ACE69A7092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{357E9306-4E93-4996-915D-08ACE69A7092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{357E9306-4E93-4996-915D-08ACE69A7092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{357E9306-4E93-4996-915D-08ACE69A7092}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8F493A3-DB83-4CA1-8C05-E7B580E741FC}
+	EndGlobalSection
+EndGlobal

@@ -1,5 +1,5 @@
 ﻿using GraphQL.Types;
-using Saffron.API.Models;
+using Saffron.API.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;

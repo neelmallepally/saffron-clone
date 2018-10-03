@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Saffron.API.Models
+namespace Saffron.API.Domain
 {
   public class Section
   {

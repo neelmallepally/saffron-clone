@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Saffron.API.Models
+namespace Saffron.API.Domain
 {
   public class Cookbook
   {

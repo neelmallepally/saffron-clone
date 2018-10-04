@@ -31,6 +31,10 @@ namespace Saffron.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cookbook");
+
+                    b.HasData(
+                        new { Id = new Guid("8e3366ff-50f9-4606-8691-2f7406e47ab8"), Title = "Indian" }
+                    );
                 });
 
             modelBuilder.Entity("Saffron.API.Data.Models.CookBookRecipesDAO", b =>
@@ -116,6 +120,10 @@ namespace Saffron.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Recipe");
+
+                    b.HasData(
+                        new { Id = new Guid("37f5087c-d956-4269-817c-21f6ef35e093"), Title = "Chicken Tikka Masala" }
+                    );
                 });
 
             modelBuilder.Entity("Saffron.API.Data.Models.SectionDAO", b =>

@@ -127,6 +127,16 @@ namespace Saffron.API.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Cookbook",
+                columns: new[] { "Id", "Title" },
+                values: new object[] { new Guid("8e3366ff-50f9-4606-8691-2f7406e47ab8"), "Indian" });
+
+            migrationBuilder.InsertData(
+                table: "Recipe",
+                columns: new[] { "Id", "Description", "PhotoUrl", "Source", "SourceUrl", "Steps", "Title", "Yield" },
+                values: new object[] { new Guid("37f5087c-d956-4269-817c-21f6ef35e093"), null, null, null, null, null, "Chicken Tikka Masala", null });
+
             migrationBuilder.CreateIndex(
                 name: "IX_CookBookRecipeBind_RecipeId",
                 table: "CookBookRecipeBind",

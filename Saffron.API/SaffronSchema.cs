@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Saffron.API
 {
-  public class HelloWorldSchema : Schema
+  public class SaffronSchema : Schema
   {
-    public HelloWorldSchema(HelloWorldQuery query)
+    public SaffronSchema(SaffronQuery query)
     {
       Query = query;
     }

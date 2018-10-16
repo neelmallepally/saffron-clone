@@ -1,9 +1,9 @@
-﻿using Saffron.API.Data.Abstractions;
+﻿using Microsoft.EntityFrameworkCore;
+using Saffron.API.Data.Abstractions;
 using Saffron.API.Data.Models;
-using System;
+using Saffron.API.Domain;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Saffron.API.Data.Repositories
 {
@@ -15,14 +15,30 @@ namespace Saffron.API.Data.Repositories
 		{
 			_context = context;
 		}
-		public IEnumerable<CookbookDAO> Get()
+
+		public Cookbook CreateCookbook(Cookbook cookbook)
 		{
-			return _context.Cookbooks;
+			var efCookbook = CookbookDAO.FromDomain(cookbook);
+			_context.Cookbooks.Add(efCookbook);
+			_context.SaveChanges();
+			return efCookbook.ToDomain();
 		}
 
-		public CookbookDAO GetByTitle(string title)
+		
+		IEnumerable<Cookbook> ICookbookRepository.Get()
 		{
-			return _context.Cookbooks.FirstOrDefault(c => c.Equals(title));
+			var cookbooks = _context.Cookbooks.AsNoTracking();
+
+			return cookbooks.Select(c => c.ToDomain()).ToList();
+		}
+		
+
+		Cookbook ICookbookRepository.GetByTitle(string title)
+		{
+			var cookbook = _context.Cookbooks
+				.AsNoTracking()
+				.SingleOrDefault(c => c.Title.Equals(title));
+			return cookbook?.ToDomain();
 		}
 	}
 

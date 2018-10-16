@@ -29,11 +29,12 @@ namespace Saffron.API
 			services.AddScoped<ICookbookRepository, CookbookRepository>();
 			services.AddScoped<IRecipeRepository, RecipeRepository>();
 
-			services.AddSingleton<IDocumentWriter, DocumentWriter>();
-			services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+			services.AddScoped<IDocumentWriter, DocumentWriter>();
+			services.AddScoped<IDocumentExecuter, DocumentExecuter>();
 
-			services.AddSingleton<SaffronQuery>();
-			services.AddSingleton<ISchema, SaffronSchema>();
+			services.AddScoped<SaffronQuery>();
+			services.AddScoped<SaffronMutation>();
+			services.AddScoped<ISchema, SaffronSchema>();
 		}
 
 

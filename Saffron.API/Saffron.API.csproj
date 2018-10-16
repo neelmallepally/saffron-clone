@@ -10,4 +10,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Schema\Mutation\" />
+    <Folder Include="Schema\Subscription\" />
+    <Folder Include="Schema\Query\" />
+  </ItemGroup>
+
 </Project>

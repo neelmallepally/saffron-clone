@@ -1,4 +1,5 @@
 ﻿using Saffron.API.Data.Models;
+using Saffron.API.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,9 @@ namespace Saffron.API.Data.Abstractions
 {
 	public interface ICookbookRepository
 	{
-		IEnumerable<CookbookDAO> Get();
-		CookbookDAO GetByTitle(string title);
+		IEnumerable<Cookbook> Get();
+		Cookbook GetByTitle(string title);
+		Cookbook CreateCookbook(Cookbook cookbook);
 	}
 
 	public interface IRecipeRepository

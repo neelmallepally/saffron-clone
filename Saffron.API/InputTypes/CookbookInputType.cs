@@ -11,6 +11,9 @@ namespace Saffron.API.InputTypes
 		public CookbookInputType()
 		{
 			Name = "CookbookInput";
+
+			Field<NonNullGraphType<StringGraphType>>("title");
+
 		}
 	}
 }

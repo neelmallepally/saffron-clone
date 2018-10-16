@@ -1,18 +1,17 @@
 ﻿using GraphQL.Types;
 using Saffron.API.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Saffron.API.Types
 {
-  public class CookbookType : ObjectGraphType<Cookbook>
-  {
-    public CookbookType()
-    {
-      Field(c => c.Id, type: typeof(IdGraphType)).Description("Id of the Cookbook");
-      Field(c => c.Title);
-    }
-  }
+	public class CookbookType : ObjectGraphType<Cookbook>
+	{
+		public CookbookType()
+		{
+			Name = "Cookbook";
+
+			Field(c => c.Id, type: typeof(IdGraphType)).Description("Id of the cookbook");
+			Field(c => c.Title).Description("The name of the cookbook");
+			Field(c => c.Sections, type: typeof(ListGraphType<SectionType>)).Description("The sections of the cookbook");
+		}
+	}
 }

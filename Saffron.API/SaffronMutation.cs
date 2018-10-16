@@ -1,5 +1,6 @@
 ﻿using GraphQL.Types;
 using Saffron.API.Data;
+using Saffron.API.Data.Abstractions;
 using Saffron.API.Domain;
 using Saffron.API.InputTypes;
 using Saffron.API.Types;
@@ -12,7 +13,7 @@ namespace Saffron.API
 {
 	public class SaffronMutation : ObjectGraphType
 	{
-		public SaffronMutation(ApplicationDbContext dbContext)
+		public SaffronMutation(ICookbookRepository cookbookRepo)
 		{
 			Field<CookbookType>(
 				"createCookbook",
@@ -22,7 +23,7 @@ namespace Saffron.API
 				resolve: context =>
 				{
 					var cookbook = context.GetArgument<Cookbook>("cookbook");
-					return null;
+					return cookbookRepo.CreateCookbook(cookbook);
 				});
 		}
 	}

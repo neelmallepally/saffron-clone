@@ -4,7 +4,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
+
 import { MaterialModule } from './material.module';
+import { GraphQLModule } from './graphql.module';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -33,7 +36,9 @@ import { SettingsComponent } from './settings/settings.component';
     FlexLayoutModule,
     LayoutModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    GraphQLModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

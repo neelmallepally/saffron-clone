@@ -15,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowseCookbookComponent } from './browse-cookbook/browse-cookbook.component';
 import { SearchComponent } from './search/search.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
-import { ManageCookbookComponent } from './manage-cookbook/manage-cookbook.component';
 import { AddRecipeToCookbookComponent } from './add-recipe-to-cookbook/add-recipe-to-cookbook.component';
 import { SettingsComponent } from './settings/settings.component';
 
@@ -26,7 +25,6 @@ import { SettingsComponent } from './settings/settings.component';
     BrowseCookbookComponent,
     SearchComponent,
     AddRecipeComponent,
-    ManageCookbookComponent,
     AddRecipeToCookbookComponent,
     SettingsComponent
   ],
@@ -38,7 +36,7 @@ import { SettingsComponent } from './settings/settings.component';
     AppRoutingModule,
     MaterialModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

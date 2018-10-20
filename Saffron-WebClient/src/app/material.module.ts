@@ -7,8 +7,7 @@ import {
   MatSelectModule,
   MatCardModule,
   MatListModule,
-  MatTooltipModule,
-  MatList
+  MatTooltipModule
 } from '@angular/material';
 
 @NgModule({

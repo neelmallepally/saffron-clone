@@ -11,9 +11,38 @@ import { shareReplay, map } from 'rxjs/operators';
 })
 export class BrowseCookbookComponent implements OnInit {
   cookbooks: Cookbook[] = [
-    { id: 'sample-0', title: 'Sample Cookbook' },
-    { id: 'Indian-1', title: 'Indian Cookbook' },
-    { id: 'Chinese-2', title: 'Chineese Cookbook' }
+    {
+      id: 'sample-0',
+      title: 'Sample Cookbook',
+      sections: [{
+        id: 'section 1',
+        title: 'section 1',
+        order: 1
+      },
+      {
+        id: 'section 2',
+        title: 'section 2',
+        order: 2
+      }]
+    },
+    {
+      id: 'Indian-1',
+      title: 'Indian Cookbook',
+      sections: [{
+        id: 'section 1',
+        title: 'section 1',
+        order: 1
+      }]
+    },
+    {
+      id: 'Chinese-2',
+      title: 'Chineese Cookbook',
+      sections: [{
+        id: 'section 1',
+        title: 'section 1',
+        order: 1
+      }]
+    }
   ];
 
   courses$: Observable<Course[]>;
@@ -45,6 +74,13 @@ export class BrowseCookbookComponent implements OnInit {
 export interface Cookbook {
   id: string;
   title: string;
+  sections: Section[]
+}
+
+export interface Section {
+  id: string;
+  title: string;
+  order: number;
 }
 
 export type Course = {

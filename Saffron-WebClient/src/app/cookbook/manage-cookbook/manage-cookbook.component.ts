@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-cookbook.component.css']
 })
 export class ManageCookbookComponent implements OnInit {
-
+  cookbooks = ['Sample Cookbook', 'Indian Cookbook'];
   constructor() { }
 
   ngOnInit() {

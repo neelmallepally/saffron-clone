@@ -26,7 +26,7 @@ import { SettingsComponent } from './settings/settings.component';
     SearchComponent,
     AddRecipeComponent,
     AddRecipeToCookbookComponent,
-    SettingsComponent
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

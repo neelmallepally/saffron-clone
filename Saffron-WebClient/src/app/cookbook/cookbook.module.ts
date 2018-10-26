@@ -5,19 +5,21 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { CookbookRoutingModule } from './cookbook-routing.module';
-import { ManageCookbookComponent } from './manage-cookbook/manage-cookbook.component';
+import { CookbookComponent } from './cookbook.component';
+import { ManageCookbookComponent } from './manage-cookbook.component';
 
 
 @NgModule({
   declarations: [
-    ManageCookbookComponent,
+    CookbookComponent,
+    ManageCookbookComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     LayoutModule,
     FlexLayoutModule,
-    CookbookRoutingModule
+    CookbookRoutingModule,
   ],
   exports: [
     

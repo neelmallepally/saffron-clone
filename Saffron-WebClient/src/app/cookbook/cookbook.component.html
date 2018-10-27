@@ -1,3 +1,31 @@
-<p>
-  new cookbook
-</p>
+<h4 *ngIf="new; else editCookbook">Create New Cookbook</h4>
+<ng-template #editCookbook>
+  <h4>Edit Cookbook</h4>
+</ng-template>
+<form [formGroup]="cookbookForm" (ngSubmit)="onSubmit()">
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="title" [formControlName]="'title'">
+    </mat-form-field>
+  </div>
+  <div>
+    <h5>Sections</h5>
+    <!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let section of cookbook?.sections" cdkDrag>
+          {{section.title}} 
+      </div>
+    </div> -->
+    <mat-list-item *ngFor="let section of cookbook?.sections; last as last">
+        {{section.title}}     
+    </mat-list-item>
+    <mat-form-field>
+      <input matInput placeholder="title" #section>
+    </mat-form-field>
+    <a mat-icon-button color="accent" [disabled]="!section.value.length > 0" (click)="addSection(section.value); section.value=''">
+      <mat-icon aria-label="add section">add</mat-icon>
+    </a>
+  </div>
+  <div>
+    <button mat-flat-button color="accent">Save</button>
+  </div>
+</form>

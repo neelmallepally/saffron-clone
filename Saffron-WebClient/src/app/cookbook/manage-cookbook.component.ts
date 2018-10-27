@@ -23,7 +23,3 @@ export class ManageCookbookComponent implements OnInit {
 
 }
 
-export class Cookbook {
-  id: string;
-  title: string
-}

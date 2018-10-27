@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CookbookRoutingModule } from './cookbook-routing.module';
 import { CookbookComponent } from './cookbook.component';
 import { ManageCookbookComponent } from './manage-cookbook.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ManageCookbookComponent } from './manage-cookbook.component';
   imports: [
     CommonModule,
     MaterialModule,
+    ReactiveFormsModule,
     LayoutModule,
     FlexLayoutModule,
     CookbookRoutingModule,

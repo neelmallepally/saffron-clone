@@ -3,6 +3,7 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { Observable } from 'rxjs';
 import { shareReplay, map } from 'rxjs/operators';
+import { Cookbook } from '../cookbook/cookbook';
 
 @Component({
   selector: 'app-browse-cookbook',
@@ -69,18 +70,6 @@ export class BrowseCookbookComponent implements OnInit {
         map(result => result.data.allCourses)
       );
   }
-}
-
-export interface Cookbook {
-  id: string;
-  title: string;
-  sections: Section[]
-}
-
-export interface Section {
-  id: string;
-  title: string;
-  order: number;
 }
 
 export type Course = {

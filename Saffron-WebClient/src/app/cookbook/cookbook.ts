@@ -1,4 +1,4 @@
-export interface Cookbook {
+export class Cookbook {
     id: string;
     title: string;
     sections: Section[]

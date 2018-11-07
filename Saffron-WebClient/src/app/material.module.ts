@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import {
   MatToolbarModule,
   MatButtonModule,
@@ -15,6 +16,7 @@ import {
   imports: [],
   declarations: [],
   exports: [
+    DragDropModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,

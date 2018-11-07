@@ -8,7 +8,7 @@ const routes: Routes = [
     component: ManageCookbookComponent,
     children:[
       { path: 'new', component: CookbookComponent },
-      { path: ':id', component: CookbookComponent }
+      { path: ':id/edit', component: CookbookComponent }
     ]
   },
   

@@ -5,24 +5,24 @@
       <input matInput placeholder="title" [formControlName]="'title'" required>
     </mat-form-field>
   </div>
-  <h5>Sections</h5>
-  <div formArrayName="sections">
-    <a mat-icon-button color="accent" (click)="addSection()">
-      <mat-icon aria-label="add section">add</mat-icon>
-    </a>
-    <div *ngIf="sections.controls.length > 0" cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let section of sections.controls; let i=index" cdkDrag>
-        <div>
-          <mat-form-field>
-            <input matInput type="text" [id]="i" [formControlName]="i" />
-          </mat-form-field>
-          <button mat-flat-button type="button" (click)="deleteSection(i)">
-              <mat-icon aria-label="delete section">delete</mat-icon>
-          </button>
-        </div>
-        <div class="example-handle" cdkDragHandle>
-          <mat-icon>reorder</mat-icon>
-        </div>
+  <div>
+    <h5>Sections <button mat-icon-button color="accent" type="button" (click)="addSection()">
+        <mat-icon>add</mat-icon>
+      </button></h5>
+  </div>
+
+  <div  formArrayName="sections" *ngIf="sections.controls.length > 0" cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let section of sections.controls; let i=index" cdkDrag>
+      <div>
+        <mat-form-field>
+          <input matInput type="text" [id]="i" [formControlName]="i" />
+        </mat-form-field>
+        <button mat-flat-button type="button" (click)="deleteSection(i)">
+          <mat-icon aria-label="delete section">delete</mat-icon>
+        </button>
+      </div>
+      <div class="example-handle" cdkDragHandle>
+        <mat-icon>reorder</mat-icon>
       </div>
     </div>
   </div>

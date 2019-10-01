@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Saffron.API.Data;
-using Saffron.API.Data.Repositories;
+using Saffron.Data;
+using Saffron.Data.Repositories;
 using Saffron.API.Middleware;
 using Saffron.Data.Abstractions;
 

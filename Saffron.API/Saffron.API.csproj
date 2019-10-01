@@ -5,14 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GraphQL" Version="2.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <Compile Remove="Schema\**" />
+    <Content Remove="Schema\**" />
+    <EmbeddedResource Remove="Schema\**" />
+    <None Remove="Schema\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Schema\Mutation\" />
-    <Folder Include="Schema\Subscription\" />
-    <Folder Include="Schema\Query\" />
+    <PackageReference Include="GraphQL" Version="2.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
   </ItemGroup>
 
   <ItemGroup>

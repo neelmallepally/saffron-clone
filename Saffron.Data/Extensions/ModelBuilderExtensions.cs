@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Saffron.API.Extensions
+namespace Saffron.Data.Extensions
 {
   public static class ModelBuilderExtensions
   {

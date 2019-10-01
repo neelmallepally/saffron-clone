@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Saffron.Data.Models;
-using Saffron.API.Extensions;
+using Saffron.Data.Extensions;
 
-namespace Saffron.API.Data
+namespace Saffron.Data
 {
 	public class ApplicationDbContext : DbContext
 	{

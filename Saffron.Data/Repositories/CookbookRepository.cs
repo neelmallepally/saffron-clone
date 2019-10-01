@@ -5,7 +5,7 @@ using Saffron.Domain;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Saffron.API.Data.Repositories
+namespace Saffron.Data.Repositories
 {
 	public class CookbookRepository : ICookbookRepository
 	{

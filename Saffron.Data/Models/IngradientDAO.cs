@@ -5,17 +5,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Saffron.API.Data.Models
+namespace Saffron.Data.Models
 {
-  [Table("CookingTime")]
-  public class CookingTimeDAO
+  [Table("Ingradient")]
+  public class IngradientDAO
   {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-    public string TimeTitle { get; set; } // ex: Prep, Cook, Total
-    public int Minutes { get; set; }
-    public int Hours { get; set; }
+    [Required, MaxLength(256)]
+    public string Name { get; set; }
+    public double Quantity { get; set; }
+    public string Units { get; set; }
+    public string Keywords { get; set; }
     [ForeignKey(nameof(Recipe))]
     public Guid RecipeId { get; set; }
     public virtual RecipeDAO Recipe { get; set; }

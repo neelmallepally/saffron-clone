@@ -1,7 +1,7 @@
 ﻿using GraphQL.Types;
 using Saffron.API.Data;
-using Saffron.API.Data.Abstractions;
-using Saffron.API.Domain;
+using Saffron.Data.Abstractions;
+using Saffron.Domain;
 using Saffron.API.InputTypes;
 using Saffron.API.Types;
 using System;

@@ -1,5 +1,5 @@
 ﻿using GraphQL.Types;
-using Saffron.API.Domain;
+using Saffron.Domain;
 
 namespace Saffron.API.Types
 {

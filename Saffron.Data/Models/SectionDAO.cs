@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Saffron.API.Data.Models
+namespace Saffron.Data.Models
 {
   [Table("Section")]
   public class SectionDAO

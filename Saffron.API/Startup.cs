@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Saffron.API.Data;
-using Saffron.API.Data.Abstractions;
 using Saffron.API.Data.Repositories;
 using Saffron.API.Middleware;
+using Saffron.Data.Abstractions;
 
 namespace Saffron.API
 {
@@ -20,7 +20,7 @@ namespace Saffron.API
 		public void ConfigureServices(IServiceCollection services)
 		{
 
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
 			//TODO: move connection string value to configuration file
 			var connection = @"Server=(localdb)\mssqllocaldb;Database=SaffronClone;Trusted_Connection=True;ConnectRetryCount=0";

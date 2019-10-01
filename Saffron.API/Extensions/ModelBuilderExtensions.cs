@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Saffron.API.Data.Models;
+using Saffron.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

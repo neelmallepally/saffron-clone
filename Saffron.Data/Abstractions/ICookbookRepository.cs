@@ -1,11 +1,11 @@
-﻿using Saffron.API.Data.Models;
-using Saffron.API.Domain;
+﻿using Saffron.Data.Models;
+using Saffron.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Saffron.API.Data.Abstractions
+namespace Saffron.Data.Abstractions
 {
 	public interface ICookbookRepository
 	{

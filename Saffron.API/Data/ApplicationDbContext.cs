@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Saffron.API.Data.Models;
+using Saffron.Data.Models;
 using Saffron.API.Extensions;
 
 namespace Saffron.API.Data

@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="GraphQL" Version="2.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
   </ItemGroup>
 
@@ -14,6 +13,11 @@
     <Folder Include="Schema\Mutation\" />
     <Folder Include="Schema\Subscription\" />
     <Folder Include="Schema\Query\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Saffron.Data\Saffron.Data.csproj" />
+    <ProjectReference Include="..\Saffron.Domain\Saffron.Domain.csproj" />
   </ItemGroup>
 
 </Project>

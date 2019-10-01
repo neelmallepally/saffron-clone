@@ -1,6 +1,6 @@
 ﻿using GraphQL.Types;
 using Saffron.API.Data;
-using Saffron.API.Domain;
+using Saffron.Domain;
 using Saffron.API.Types;
 using System.Linq;
 

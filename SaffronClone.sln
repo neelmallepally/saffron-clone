@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2036
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saffron.API", "Saffron.API\Saffron.API.csproj", "{357E9306-4E93-4996-915D-08ACE69A7092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saffron.API", "Saffron.API\Saffron.API.csproj", "{357E9306-4E93-4996-915D-08ACE69A7092}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saffron.Data", "Saffron.Data\Saffron.Data.csproj", "{2E2FC08B-3804-4987-A1E0-502146E57E33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saffron.Domain", "Saffron.Domain\Saffron.Domain.csproj", "{D4CCA1AC-FFFB-4DA4-B0F7-8A6083BB8FCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{0B3256B0-61F7-4B23-AF0F-8ACA1B8F7F27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{357E9306-4E93-4996-915D-08ACE69A7092}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{357E9306-4E93-4996-915D-08ACE69A7092}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{357E9306-4E93-4996-915D-08ACE69A7092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E2FC08B-3804-4987-A1E0-502146E57E33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E2FC08B-3804-4987-A1E0-502146E57E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E2FC08B-3804-4987-A1E0-502146E57E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E2FC08B-3804-4987-A1E0-502146E57E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4CCA1AC-FFFB-4DA4-B0F7-8A6083BB8FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4CCA1AC-FFFB-4DA4-B0F7-8A6083BB8FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4CCA1AC-FFFB-4DA4-B0F7-8A6083BB8FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4CCA1AC-FFFB-4DA4-B0F7-8A6083BB8FCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B3256B0-61F7-4B23-AF0F-8ACA1B8F7F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B3256B0-61F7-4B23-AF0F-8ACA1B8F7F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B3256B0-61F7-4B23-AF0F-8ACA1B8F7F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B3256B0-61F7-4B23-AF0F-8ACA1B8F7F27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,10 +1,10 @@
-﻿using Saffron.API.Domain;
+﻿using Saffron.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Saffron.API.Data.Models
+namespace Saffron.Data.Models
 {
 
 	[Table("Cookbook")]

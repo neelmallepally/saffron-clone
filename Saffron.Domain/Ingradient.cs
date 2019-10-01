@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Saffron.API.Domain
+namespace Saffron.Domain
 {
   public class Ingradient
   {

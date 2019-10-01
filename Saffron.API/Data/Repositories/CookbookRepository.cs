@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Saffron.API.Data.Abstractions;
-using Saffron.API.Data.Models;
-using Saffron.API.Domain;
+using Saffron.Data.Abstractions;
+using Saffron.Data.Models;
+using Saffron.Domain;
 using System.Collections.Generic;
 using System.Linq;
 

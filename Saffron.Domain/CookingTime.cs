@@ -1,4 +1,4 @@
-﻿namespace Saffron.API.Domain
+﻿namespace Saffron.Domain
 {
   public class CookingTime
   {

@@ -1,7 +1,10 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Saffron.API.Data;
+using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,36 +18,46 @@ namespace Saffron.API.Features.Cookbook
 
 		public CookbookController(IMediator mediator) => _mediator = mediator;
 
-		//public async Task<IActionResult> GetAll()
-		//{
-		//	var cookbookDto = await _mediator.Send<CookbookDTO>(new CookbookAllQuery());
-		//}
-	}
+		[HttpGet]
+		public async Task<ActionResult<List<CookbookDTO>>> GetAll() => await _mediator.Send(new GetCookbookAllQuery());
 
-	public class CookbookDTO
-	{
-
-	}
-	public class CookbookAllQuery : IRequest<CookbookDTO>
-	{
-	}
-
-	public class CookbookAllQueryHandler : IRequestHandler<CookbookAllQuery, CookbookDTO>
-	{
-		private readonly ApplicationDbContext _context;
-
-		public CookbookAllQueryHandler(ApplicationDbContext context)
+		[HttpGet("{id}", Name = "CookbookById")]
+		public async Task<ActionResult<CookbookDTO>> Get(Guid id)
 		{
-			_context = context;
+			var cookbook = await _mediator.Send(new GetCookbookQuery { Id = id });
+			if (cookbook != null)
+			{
+				return cookbook;
+			}
+			return NotFound();
 		}
-		public async Task<CookbookDTO> Handle(CookbookAllQuery request, CancellationToken cancellationToken)
-		{
-			var result = new CookbookDTO();
 
-			//TO DO: Modify this cod
-			var cookbooks = await _context.Cookbooks.AsNoTracking().ToListAsync();
-			return result;
+		[HttpPost]
+		public async Task<IActionResult> Create([FromBody]CreateCookbookCommand cookbook)
+		{
+			var result = await _mediator.Send(cookbook);
+			return CreatedAtRoute("CookbookById", new { id = result.Id }, result);
+		}
+
+		[HttpPatch("{id}")]
+		public async Task<IActionResult> Update([FromRoute]Guid id, [FromBody]UpdateCookbookCommand request)
+		{
+			if(id != request.Id)
+			{
+				return BadRequest($"ID {id} does not match with request ID {request.Id}");
+			}
+			var result = await _mediator.Send(request);
+			if (result)
+				return NoContent();
+
+			return BadRequest($"Cookbook with ID {id} not found");
+		}
+
+		[HttpDelete("{id}")]
+		public async Task<IActionResult> Delete([FromRoute]Guid id)
+		{
+			await _mediator.Send(new DeleteCookbookCommand() { Id = id });
+			return NoContent();
 		}
 	}
-
 }

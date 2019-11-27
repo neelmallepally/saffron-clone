@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Saffron.API.Data;
+using Saffron.API.Infrastructure;
 
 namespace Saffron.API
 {
@@ -22,12 +23,15 @@ namespace Saffron.API
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+			services.AddSwagger();
 
 			services.AddDbContext<ApplicationDbContext>(options =>
 				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 			services.AddAutoMapper(typeof(Startup));
 			services.AddMediatR(typeof(Startup));
+
+			services.AddTransient<ISqlConnectionFactory>(provider => new SqlConnectionFactory(Configuration.GetConnectionString("DefaultConnection")));
 
 		}
 
@@ -44,6 +48,8 @@ namespace Saffron.API
 				// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 				app.UseHsts();
 			}
+
+			app.ConfigureSwagger();
 
 			app.UseDefaultFiles();
 			app.UseStaticFiles();

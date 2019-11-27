@@ -15,6 +15,7 @@ namespace Saffron.API.Data
 		public DbSet<CookbookDAO> Cookbooks { get; set; }
 		public DbSet<RecipeDAO> Recipes { get; set; }
 		public DbSet<CookBookRecipesDAO> CookbookRecipes { get; set; }
+		public DbSet<SectionDAO> Sections { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

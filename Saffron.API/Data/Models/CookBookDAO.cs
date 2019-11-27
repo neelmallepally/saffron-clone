@@ -16,7 +16,7 @@ namespace Saffron.API.Data.Models
 		public Guid Id { get; set; }
 		[Required, MaxLength(60)]
 		public string Title { get; set; }
-		public IList<SectionDAO> Sections { get; set; } = new List<SectionDAO>();
+		public IEnumerable<SectionDAO> Sections { get; set; } = new List<SectionDAO>();
 
 
 		public Cookbook ToDomain()

@@ -2,8 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Cookbook, Section } from './cookbook';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Subscription } from 'rxjs';
+import { Subscription, forkJoin } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CookbookService } from '../services/cookbook.service';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class CookbookComponent implements OnInit, OnDestroy {
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private cookbookService: CookbookService) { }
 
   ngOnInit() {
     this.cookbookForm = this.fb.group({
@@ -45,19 +47,18 @@ export class CookbookComponent implements OnInit, OnDestroy {
   }
 
   getCookbook(id: string) {
-    let cb:Cookbook = new Cookbook();
-    // hard code sample cookbook for now
-    // this.cookbookService.query('')
-    // .subscribe(
-
-    // );
-    
+    let cb:Cookbook = new Cookbook();   
     if(id){
-      cb.id = id;
-      cb.title = 'Sample Cookbook';
-      cb.sections = [ { id: '1', title: 'Breakfast', order: 0 }];
+      let cookbook = this.cookbookService.getCookbook(id);
+      let sections = this.cookbookService.getCookbookSections(id);
+      forkJoin([cookbook, sections]).subscribe(results => {
+        cb = results[0];
+        cb.sections = results[1];
+        this.displayCookbook(cb);
+        console.log(cb);
+      });
     }    
-    this.displayCookbook(cb);
+    
   }
 
   displayCookbook(cb: Cookbook){

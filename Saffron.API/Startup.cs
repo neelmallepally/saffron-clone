@@ -24,6 +24,7 @@ namespace Saffron.API
 		{
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 			services.AddSwagger();
+			services.AddCorsPolicy(Configuration);
 
 			services.AddDbContext<ApplicationDbContext>(options =>
 				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -50,6 +51,8 @@ namespace Saffron.API
 			}
 
 			app.ConfigureSwagger();
+			app.UseCorsPolicy();
+
 
 			app.UseDefaultFiles();
 			app.UseStaticFiles();

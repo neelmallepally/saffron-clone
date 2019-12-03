@@ -8,6 +8,7 @@ import { CookbookRoutingModule } from './cookbook-routing.module';
 import { CookbookComponent } from './cookbook.component';
 import { ManageCookbookComponent } from './manage-cookbook.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CookbookResolverService } from './cookbook-resolve.service';
 
 
 @NgModule({
@@ -22,6 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     LayoutModule,
     FlexLayoutModule,
     CookbookRoutingModule,
+  ],
+  providers : [
+    CookbookResolverService
   ],
   exports: [
     

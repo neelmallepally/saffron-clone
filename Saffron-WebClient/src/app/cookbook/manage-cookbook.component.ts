@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Cookbook } from './cookbook';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-manage-cookbook',
@@ -6,19 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-cookbook.component.css']
 })
 export class ManageCookbookComponent implements OnInit {
-  cookbooks = [
-      {
-        "id": '1',
-        "title":'Sample Cookbook'
-      },
-      {
-        "id": '2',
-        "title":'Indian Cookbook'
-      },
-    ];
-  constructor() { }
+  cookbooks: Cookbook[];
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data  => {
+      this.cookbooks = data.cookbooks;
+    });   
   }
 
 }
